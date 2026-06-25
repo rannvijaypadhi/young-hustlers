@@ -4,68 +4,97 @@
     <meta charset="UTF-8">
     <title>Young Hustlers</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
-<header class="main-header">
+
+<header class="main-header fade-in">
     <div class="logo">Young Hustlers</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="lemonade.html">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
     </nav>
 </header>
 
-<section class="hero">
-    <h1>Young Hustlers</h1>
-    <p>Premium lemonade & car wash services in Delaware.</p>
-    <div class="hero-buttons">
-        <a href="lemonade.html" class="btn primary">Order Lemonade</a>
-        <a href="carwash.html" class="btn secondary">Book Car Wash</a>
-    </div>
-</section>
+<!-- HERO SECTION -->
+<section class="hero" style="background-image: url('assets/images/background.png');">
+    <div class="hero-inner slide-up">
+        <h1>Young Hustlers</h1>
+        <p>LaGrange’s #1 Youth‑Run Lemonade & Car Wash Service</p>
 
-<section class="payment-section">
-    <h2>Choose Your Payment Method</h2>
-
-    <div class="payment-grid">
-        <div class="payment-card">
-            <h3>Pay with PayPal</h3>
-            <button class="btn pay-btn">Pay with PayPal</button>
-            <p class="placeholder">https://paypal.me/placeholder</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Venmo</h3>
-            <button class="btn pay-btn">Pay with Venmo</button>
-            <p class="placeholder">@placeholder</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Zelle</h3>
-            <p>Send payment to: placeholder@email.com</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Cash</h3>
-            <p>Cash accepted upon delivery or at your car wash appointment.</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Card</h3>
-            <button class="btn pay-btn card-btn">Pay with Card (Coming Soon)</button>
+        <div class="hero-buttons">
+            <a href="lemonade.html" class="btn primary">Order Lemonade</a>
+            <a href="carwash.html" class="btn secondary">Book Car Wash</a>
         </div>
     </div>
 </section>
 
-<section class="about">
-    <h2>About Young Hustlers</h2>
-    <p>
-        Young Hustlers is a youth‑run brand focused on quality, hustle, and community.
-        We offer fresh lemonade and professional car wash services with a premium urban vibe.
-    </p>
+<!-- LEMONADE SHOWCASE -->
+<section class="content fade-in">
+    <h2>Our Lemonade</h2>
+    <p>Fresh. Cold. Legendary. Delivered only in LaGrange.</p>
+
+    <div class="lemonade-showcase slide-up">
+        <img src="assets/images/lemonade.png" alt="Lemonade" class="lemonade-img">
+        <div class="lemonade-text">
+            <h3>Made With Real Lemons</h3>
+            <p>
+                We squeeze every cup fresh — no mixes, no shortcuts.  
+                Just pure flavor and hustle.
+            </p>
+            <a href="lemonade.html" class="btn primary">Order Now</a>
+        </div>
+    </div>
 </section>
 
-<footer class="main-footer">
+<!-- WHY CHOOSE US -->
+<section class="content fade-in">
+    <h2>Why Choose Us?</h2>
+
+    <div class="why-grid">
+        <div class="why-card slide-up">
+            <h3>✔ Youth‑Powered</h3>
+            <p>We’re young, hungry, and committed to delivering the best service in LaGrange.</p>
+        </div>
+
+        <div class="why-card slide-up">
+            <h3>✔ Fast Delivery</h3>
+            <p>Fresh lemonade delivered quickly — no long waits, no excuses.</p>
+        </div>
+
+        <div class="why-card slide-up">
+            <h3>✔ Premium Quality</h3>
+            <p>From lemonade to car washes, everything we do is clean, sharp, and professional.</p>
+        </div>
+
+        <div class="why-card slide-up">
+            <h3>✔ Local to LaGrange</h3>
+            <p>We only serve LaGrange — meaning faster service and better reliability.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="content fade-in">
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+        <div class="service-card slide-up">
+            <h3>Lemonade</h3>
+            <p>Fresh, cold, and made with hustle. Delivered only in LaGrange.</p>
+            <a href="lemonade.html" class="btn primary">Order Now</a>
+        </div>
+
+        <div class="service-card slide-up">
+            <h3>Car Wash</h3>
+            <p>Exterior, power wash, and full interior packages — all done with care.</p>
+            <a href="carwash.html" class="btn primary">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer fade-in">
     <p>&copy; 2026 Young Hustlers. All rights reserved.</p>
 </footer>
 

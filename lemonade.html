@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Young Hustlers – Lemonade</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
 <header class="main-header">
@@ -34,14 +35,20 @@
             Name
             <input type="text" required>
         </label>
+
         <label>
-            Address / Pickup Location
-            <input type="text" required>
+            Location
+            <select class="select-box" required>
+                <option value="">Select your location</option>
+                <option value="lagrange">LaGrange (Only Delivery Area)</option>
+            </select>
         </label>
+
         <label>
             Order Details
             <textarea required></textarea>
         </label>
+
         <button type="submit" class="btn primary">Submit Order (Placeholder)</button>
         <p class="form-note">This form is a placeholder. Orders are not processed yet.</p>
     </form>

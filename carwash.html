@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Young Hustlers – Car Wash</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
 <header class="main-header">
@@ -23,9 +24,18 @@
 <section class="content">
     <h2>Packages</h2>
     <ul class="menu-list">
-        <li>Basic Exterior Wash – $15</li>
-        <li>Premium Wash & Wax – $25</li>
-        <li>Full Detail (Interior + Exterior) – $40</li>
+        <li>
+            <strong>$10 – Exterior Wash</strong><br>
+            Quick exterior clean: soap, rinse, shine.
+        </li>
+        <li>
+            <strong>$20 – Power Wash</strong><br>
+            Deep exterior clean using high‑pressure power wash.
+        </li>
+        <li>
+            <strong>$30 – Full Interior + Exterior</strong><br>
+            Power wash outside + vacuum and wipe interior.
+        </li>
     </ul>
 
     <h2>Book an Appointment</h2>
@@ -34,18 +44,30 @@
             Name
             <input type="text" required>
         </label>
+
         <label>
             Location
-            <input type="text" required>
+            <select class="select-box" required>
+                <option value="">Select your location</option>
+                <option value="lagrange">LaGrange (Only Service Area)</option>
+            </select>
         </label>
+
         <label>
             Preferred Date & Time
             <input type="text" required>
         </label>
+
         <label>
             Package
-            <input type="text" required>
+            <select class="select-box" required>
+                <option value="">Select a package</option>
+                <option value="exterior">$10 – Exterior Wash</option>
+                <option value="powerwash">$20 – Power Wash</option>
+                <option value="full">$30 – Full Interior + Exterior</option>
+            </select>
         </label>
+
         <button type="submit" class="btn primary">Submit Booking (Placeholder)</button>
         <p class="form-note">This form is a placeholder. Bookings are not processed yet.</p>
     </form>
