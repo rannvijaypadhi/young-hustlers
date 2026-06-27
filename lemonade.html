@@ -2,92 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Young Hustlers – Lemonade</title>
+    <title>Lemonade – Young Hustlers</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
-<header class="main-header">
-    <div class="logo">Young Hustlers</div>
-    <nav>
+
+<header class="premium-header fade-in">
+    <div class="logo-area">
+        <img src="assets/favicon.png" alt="Young Hustlers Logo" class="logo-img">
+        <span class="brand-name">Young Hustlers</span>
+    </div>
+    <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="lemonade.html" class="active">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
+        <a href="lawn.html">Lawn Mowing</a>
+        <a href="bundles.html">Bundles</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="referral.html">Referral</a>
     </nav>
 </header>
 
-<section class="page-hero">
-    <h1>Lemonade Orders</h1>
-    <p>Fresh, cold, and made with hustle.</p>
+<section class="hero fade-in" style="background-image: url('assets/images/background.png'); background-size: cover; background-position: center;">
+    <h1>Lemonade Stand</h1>
+    <p class="tagline">If It Needs Doing, We’re Doing It.</p>
 </section>
 
-<section class="content">
-    <h2>Menu</h2>
-    <ul class="menu-list">
-        <li>Classic Lemonade – $3</li>
-        <li>Strawberry Lemonade – $4</li>
-        <li>Large Pitcher (Party) – $12</li>
-    </ul>
+<section class="content fade-in">
+    <h2>Fresh, Cold, Made With Hustle</h2>
+    <p>Order lemonade for delivery right to your door.</p>
 
-    <h2>Place an Order</h2>
-    <form class="order-form">
-        <label>
-            Name
-            <input type="text" required>
-        </label>
+    <div class="lemonade-showcase">
+        <img src="assets/images/lemonade.png" class="lemonade-img" alt="Lemonade">
+        <div class="lemonade-text">
+            <h3>Menu</h3>
+            <ul class="menu-list">
+                <li>Small Cup – $2</li>
+                <li>Large Cup – $3</li>
+                <li>Gallon – $8</li>
+            </ul>
+        </div>
+    </div>
 
-        <label>
-            Location
-            <select class="select-box" required>
-                <option value="">Select your location</option>
-                <option value="lagrange">LaGrange (Only Delivery Area)</option>
-            </select>
-        </label>
+    <h2>Place Your Delivery Order</h2>
 
-        <label>
-            Order Details
-            <textarea required></textarea>
-        </label>
+   <form data-order-form>
 
-        <button type="submit" class="btn primary">Submit Order (Placeholder)</button>
-        <p class="form-note">This form is a placeholder. Orders are not processed yet.</p>
-    </form>
+  <input type="hidden" name="service" value="Car Wash">
 
-    <h2>Payment Options</h2>
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Phone Number</label>
+  <input type="tel" name="phone" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Address</label>
+  <input type="text" name="address" required>
+
+  <label>Date</label>
+  <input type="date" name="date" required>
+
+  <label>Time</label>
+  <input type="time" name="time" required>
+
+  <label>Package</label>
+  <select name="tier" required>
+    <option value="Basic">Basic</option>
+    <option value="Plus">Plus</option>
+    <option value="Premium">Premium</option>
+  </select>
+
+  <p>Total: <span class="live-price">$0</span></p>
+
+  <button type="submit" class="btn primary">Submit Order</button>
+
+</form>
+
+    <h2 style="margin-top: 40px;">Choose Payment Method</h2>
+
     <div class="payment-grid">
-        <div class="payment-card">
-            <h3>Pay with PayPal</h3>
-            <button class="btn pay-btn">Pay with PayPal</button>
-            <p class="placeholder">https://paypal.me/placeholder</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Venmo</h3>
-            <button class="btn pay-btn">Pay with Venmo</button>
-            <p class="placeholder">@placeholder</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Zelle</h3>
-            <p>Send payment to: placeholder@email.com</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Cash</h3>
-            <p>Cash accepted upon delivery.</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>Pay with Card</h3>
-            <button class="btn pay-btn card-btn">Pay with Card (Coming Soon)</button>
-        </div>
+        <a href="payments/paypal.html" class="payment-card">
+            <h3>PayPal</h3>
+            <p class="placeholder">paypal.me/younghustlers</p>
+            <button class="btn pay-btn">Pay</button>
+        </a>
+        <a href="payments/venmo.html" class="payment-card">
+            <h3>Venmo</h3>
+            <p class="placeholder">@YoungHustlers</p>
+            <button class="btn pay-btn">Pay</button>
+        </a>
+        <a href="payments/zelle.html" class="payment-card">
+            <h3>Zelle</h3>
+            <p class="placeholder">younghustlers@email.com</p>
+            <button class="btn pay-btn">Pay</button>
+        </a>
+        <a href="payments/cashapp.html" class="payment-card">
+            <h3>Cash App</h3>
+            <p class="placeholder">$YoungHustlers</p>
+            <button class="btn pay-btn">Pay</button>
+        </a>
+        <a href="payments/card.html" class="payment-card">
+            <h3>Credit/Debit Card</h3>
+            <p class="placeholder">Secure checkout</p>
+            <button class="btn pay-btn">Pay</button>
+        </a>
     </div>
 </section>
 
-<footer class="main-footer">
-    <p>&copy; 2026 Young Hustlers. All rights reserved.</p>
+<footer class="main-footer premium-footer fade-in">
+    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
+    <p class="footer-brand">Young Hustlers</p>
+    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>

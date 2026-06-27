@@ -1,40 +1,134 @@
-// Simple "Pay with Card (Coming Soon)" popup
+// -----------------------------
+// CONFIG
+// -----------------------------
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxBVNNItog3k1FDjApoq4Ow4ih1bsYu4ESvjDzcuBZWmkptJo9nNq3mYQ-fe8MDBoq_3w/exec";
 
+// -----------------------------
+// ANIMATIONS (fade-in on load)
+// -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
-    const cardButtons = document.querySelectorAll(".card-btn");
+  document.querySelectorAll(".fade-in").forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(10px)";
 
-    if (cardButtons.length > 0) {
-        // Create popup element once
-        const popup = document.createElement("div");
-        popup.className = "card-popup";
-        popup.innerHTML = `
-            <div class="card-popup-inner">
-                <h3>Card Payments Coming Soon</h3>
-                <p>
-                    Card payments are not active yet.  
-                    For now, please use PayPal, Venmo, Zelle, or Cash.
-                </p>
-                <button class="btn popup-close">Got it</button>
-            </div>
-        `;
-        document.body.appendChild(popup);
+    setTimeout(() => {
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }, 100);
+  });
+});
 
-        const closeBtn = popup.querySelector(".popup-close");
+// -----------------------------
+// TIME VALIDATION (12 PM – 7 PM)
+// -----------------------------
+function validateTime(time) {
+  if (!time) return false;
+  const [hour] = time.split(":").map(Number);
+  return hour >= 12 && hour < 19;
+}
 
-        cardButtons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                popup.style.display = "flex";
-            });
-        });
+// -----------------------------
+// PRICING LOGIC
+// -----------------------------
+function calculatePrice(service, tier) {
+  let price = 0;
 
-        closeBtn.addEventListener("click", () => {
-            popup.style.display = "none";
-        });
+  if (service === "Car Wash") {
+    if (tier === "Basic") price = 10;
+    if (tier === "Plus") price = 15;
+    if (tier === "Premium") price = 20;
+  }
 
-        popup.addEventListener("click", (e) => {
-            if (e.target === popup) {
-                popup.style.display = "none";
-            }
-        });
+  if (service === "Lawn Mowing") {
+    if (tier === "Basic") price = 12;
+    if (tier === "Plus") price = 18;
+    if (tier === "Premium") price = 25;
+  }
+
+  if (service === "Lemonade") price = 5;
+  if (service === "Bundle") price = 30;
+
+  return price;
+}
+
+// -----------------------------
+// LIVE PRICE UPDATE
+// -----------------------------
+function attachLivePrice(form) {
+  const tierSelect = form.querySelector("[name='tier']");
+  const priceDisplay = form.querySelector(".live-price");
+
+  if (!tierSelect || !priceDisplay) return;
+
+  function update() {
+    const service = form.service.value;
+    const tier = tierSelect.value;
+    const price = calculatePrice(service, tier);
+    priceDisplay.textContent = "$" + price;
+  }
+
+  tierSelect.addEventListener("change", update);
+  update();
+}
+
+// -----------------------------
+// ORDER SUBMISSION
+// -----------------------------
+async function submitOrder(event) {
+  event.preventDefault();
+  const form = event.target;
+
+  const service = form.service?.value || "";
+  const tier = form.tier?.value || "";
+  const time = form.time?.value || "";
+
+  if ((service === "Car Wash" || service === "Lawn Mowing") && !validateTime(time)) {
+    alert("We operate only between 12 PM and 7 PM for Car Wash and Lawn Mowing.");
+    return;
+  }
+
+  const price = calculatePrice(service, tier);
+
+  const data = {
+    service,
+    tier,
+    name: form.name?.value || "",
+    address: form.address?.value || "",
+    date: form.date?.value || "",
+    time,
+    details: form.details?.value || "",
+    price,
+    phone: form.phone?.value || "",
+    email: form.email?.value || "",
+    notes: form.notes?.value || ""
+  };
+
+  try {
+    const res = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.status === "success") {
+      window.location.href = "payments/card.html?amount=" + price;
+    } else {
+      alert("Something went wrong.");
     }
+  } catch (err) {
+    alert("Network error.");
+  }
+}
+
+// -----------------------------
+// ATTACH FORM HANDLERS
+// -----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("form[data-order-form]").forEach(form => {
+    form.addEventListener("submit", submitOrder);
+    attachLivePrice(form);
+  });
 });

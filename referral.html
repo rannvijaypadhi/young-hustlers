@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Referral – Young Hustlers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="premium-header fade-in">
+    <div class="logo-area">
+        <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
+        <span class="brand-name">Young Hustlers</span>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lemonade.html">Lemonade</a>
+        <a href="carwash.html">Car Wash</a>
+        <a href="lawn.html">Lawn Mowing</a>
+        <a href="bundles.html">Bundles</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="referral.html" class="active">Referral</a>
+    </nav>
+</header>
+
+<section class="hero fade-in" style="background-image: url('assets/images/icons/background.png'); background-size: cover; background-position: center;">
+    <h1>Referral Program</h1>
+    <p class="tagline">Share the Hustle. Earn Rewards.</p>
+</section>
+
+<section class="content fade-in">
+    <h2>Refer a Friend</h2>
+    <p>Send us a referral and get rewarded when they place their first order.</p>
+
+    <form class="order-form" action="https://script.google.com/macros/s/YOUR_REFERRAL_SCRIPT/exec" method="POST">
+
+        <label>Your Name:
+            <input type="text" name="your_name" required>
+        </label>
+
+        <label>Your Email:
+            <input type="email" name="your_email" required>
+        </label>
+
+        <label>Friend's Name:
+            <input type="text" name="friend_name" required>
+        </label>
+
+        <label>Friend's Email:
+            <input type="email" name="friend_email" required>
+        </label>
+
+        <label>Message (Optional):
+            <textarea name="message" placeholder="Write a short message to your friend..."></textarea>
+        </label>
+
+        <button type="submit" class="btn primary">Submit Referral</button>
+    </form>
+
+    <h2 style="margin-top: 40px;">How It Works</h2>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <h3>1. Refer a Friend</h3>
+            <p>Fill out the form above with your friend's info.</p>
+        </div>
+        <div class="why-card">
+            <h3>2. They Place an Order</h3>
+            <p>Once they order any service, your referral is counted.</p>
+        </div>
+        <div class="why-card">
+            <h3>3. You Get Rewards</h3>
+            <p>Earn discounts, free lemonade, or priority service.</p>
+        </div>
+    </div>
+
+</section>
+
+<footer class="main-footer premium-footer fade-in">
+    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
+    <p class="footer-brand">Young Hustlers</p>
+    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
