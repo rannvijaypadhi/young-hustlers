@@ -1,84 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Young Hustlers – Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Young Hustlers – Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="yh-page">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+  <header class="yh-header fade-in">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
         <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+
+      <nav class="yh-nav">
         <a href="index.html" class="active">Home</a>
         <a href="lemonade.html">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html">Bundles</a>
         <a href="reviews.html">Reviews</a>
         <a href="referral.html">Referral</a>
-    </nav>
-</header>
-
-<section class="hero fade-in" style="background-image: url('assets/images/background.png'); background-size: cover; background-position: center;">
-    <h1>Young Hustlers</h1>
-    <p class="tagline">If It Needs Doing, We’re Doing It.</p>
-    <div class="hero-buttons">
-        <a href="lemonade.html" class="btn primary">Order Lemonade</a>
-        <a href="carwash.html" class="btn secondary">Book Car Wash</a>
-        <a href="lawn.html" class="btn secondary">Book Lawn Mowing</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section class="content fade-in">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <img src="assets/images/lemonade.png" alt="Lemonade" class="lemonade-img">
-            <h3>Lemonade Stand</h3>
-            <p>Fresh, cold lemonade served with hustle.</p>
-            <a href="lemonade.html" class="btn primary">Order Now</a>
-        </div>
-        <div class="service-card">
-            <img src="assets/images/carwash.png" alt="Car Wash" class="lemonade-img">
-            <h3>Car Wash</h3>
-            <p>Hand‑washed rides, youth‑run, quality‑driven.</p>
-            <a href="carwash.html" class="btn primary">Order Now</a>
-        </div>
-        <div class="service-card">
-            <img src="assets/images/lawn.png" alt="Lawn Mowing" class="lemonade-img">
-            <h3>Lawn Mowing</h3>
-            <p>Clean cuts, sharp yards, reliable service.</p>
-            <a href="lawn.html" class="btn primary">Order Now</a>
-        </div>
+  <!-- ==================================================
+       HERO SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-hero fade-in" style="
+    background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+  ">
+    <div class="yh-hero-content">
+      <h1 class="yh-hero-title">Young Hustlers</h1>
+      <p class="yh-hero-subtitle">If It Needs Doing, We’re Doing It.</p>
+
+      <div class="hero-buttons" style="margin-top: 25px;">
+        <a href="lemonade.html" class="btn primary yh-btn-primary">Order Lemonade</a>
+        <a href="carwash.html" class="btn secondary yh-btn-secondary">Book Car Wash</a>
+        <a href="lawn.html" class="btn secondary yh-btn-secondary">Book Lawn Care</a>
+      </div>
     </div>
+  </section>
 
-    <h2 style="margin-top: 40px;">Why Choose Young Hustlers?</h2>
-    <div class="why-grid">
-        <div class="why-card">
-            <h3>Youth‑Run</h3>
-            <p>We’re building work ethic, one job at a time.</p>
+  <!-- ==================================================
+       SERVICES SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Our Services</h2>
+      <p class="yh-section-text">
+        Young Hustlers is a youth‑run service group offering lemonade delivery, car washes,
+        lawn care, bundles, and more. We keep everything simple, honest, and hard‑working.
+      </p>
+
+      <div class="service-grid">
+
+        <!-- Lemonade -->
+        <div class="service-card yh-stagger">
+          <img src="assets/images/lemonade.png" alt="Lemonade">
+          <h3>Lemonade Stand</h3>
+          <p>Fresh, cold lemonade served with hustle.</p>
+          <a href="lemonade.html" class="btn primary yh-btn-primary">Order Now</a>
         </div>
-        <div class="why-card">
-            <h3>Reliable</h3>
-            <p>We show up, we work hard, we finish the job.</p>
+
+        <!-- Car Wash -->
+        <div class="service-card yh-stagger">
+          <img src="assets/images/carwash.png" alt="Car Wash">
+          <h3>Car Wash</h3>
+          <p>Hand‑washed rides, youth‑run, quality‑driven.</p>
+          <a href="carwash.html" class="btn primary yh-btn-primary">Book Now</a>
         </div>
-        <div class="why-card">
-            <h3>Local</h3>
-            <p>Serving our neighborhood with pride.</p>
+
+        <!-- Lawn Care -->
+        <div class="service-card yh-stagger">
+          <img src="assets/images/lawn.png" alt="Lawn Care">
+          <h3>Lawn Care</h3>
+          <p>Clean cuts, sharp yards, reliable service.</p>
+          <a href="lawn.html" class="btn primary yh-btn-primary">Book Now</a>
         </div>
+
+      </div>
     </div>
-</section>
+  </section>
 
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
+  <!-- ==================================================
+       WHY CHOOSE US
+  ================================================== -->
+  <section class="yh-section yh-section-form fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Why Choose Young Hustlers?</h2>
+      <p class="yh-section-text">
+        We’re not just a service — we’re a movement of young entrepreneurs building skills,
+        work ethic, and community trust.
+      </p>
+
+      <div class="service-grid">
+
+        <div class="service-card yh-stagger">
+          <h3>Youth‑Run</h3>
+          <p>We’re building work ethic, one job at a time.</p>
+        </div>
+
+        <div class="service-card yh-stagger">
+          <h3>Reliable</h3>
+          <p>We show up, we work hard, we finish the job.</p>
+        </div>
+
+        <div class="service-card yh-stagger">
+          <h3>Local</h3>
+          <p>Serving our neighborhood with pride.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       BUNDLES SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-summary fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Bundles & Deals</h2>
+      <p class="yh-section-text">
+        Want multiple services at once? Check out our bundles for combined savings and
+        convenience. Perfect for busy weekends, events, or seasonal cleanups.
+      </p>
+
+      <a href="bundles.html" class="btn primary yh-btn-primary">View Bundles</a>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       REVIEWS SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Customer Reviews</h2>
+      <p class="yh-section-text">
+        See what our community says about Young Hustlers. We take pride in every job we do.
+      </p>
+
+      <a href="reviews.html" class="btn secondary yh-btn-secondary">Read Reviews</a>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+  <footer class="yh-footer fade-in">
+    <div class="yh-footer-inner">
+      <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Young Hustlers Logo">
+      <p class="footer-brand">Young Hustlers</p>
+      <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+      <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

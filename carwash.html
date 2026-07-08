@@ -1,142 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Car Wash – Young Hustlers</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Young Hustlers – Car Wash</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="carwash">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
-        <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+  <!-- HEADER -->
+  <header class="yh-header">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+      <nav class="yh-nav">
         <a href="index.html">Home</a>
+        <a href="carwash.html">Car Wash</a>
         <a href="lemonade.html">Lemonade</a>
-        <a href="carwash.html" class="active">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html">Bundles</a>
-        <a href="reviews.html">Reviews</a>
         <a href="referral.html">Referral</a>
-    </nav>
-</header>
-
-<section class="hero fade-in" style="background-image: url('assets/images/icons/background.png'); background-size: cover; background-position: center;">
-    <h1>Car Wash</h1>
-    <p class="tagline">If It Needs Doing, We’re Doing It.</p>
-</section>
-
-<section class="content fade-in">
-    <h2>Hand‑Washed. Youth‑Run. Quality‑Driven.</h2>
-    <p>Book a car wash and we’ll deliver clean results right to your driveway.</p>
-
-    <div class="service-grid" style="margin-top: 20px;">
-        <div class="service-card">
-            <h3>Exterior Wash</h3>
-            <p>$10 – Full exterior scrub + rinse</p>
-        </div>
-        <div class="service-card">
-            <h3>Interior Vacuum</h3>
-            <p>$5 – Quick interior cleanup</p>
-        </div>
-        <div class="service-card">
-            <h3>Full Wash</h3>
-            <p>$15 – Exterior + interior</p>
-        </div>
+        <a href="reviews.html">Reviews</a>
+      </nav>
     </div>
+  </header>
 
-    <h2 style="margin-top: 40px;">Book Your Delivery Car Wash</h2>
+  <!-- MAIN -->
+  <main class="yh-main">
 
-   <form data-order-form>
+    <!-- HERO SECTION -->
+    <section class="yh-section yh-section-hero">
+      <div class="yh-hero-content">
+        <h1 class="yh-hero-title">Car Wash by Young Hustlers</h1>
+        <p class="yh-hero-subtitle">
+          Book a cozy, youth‑run car wash service. We come to you, clean your car with care,
+          and keep everything simple—no complicated payments, just a clean car and a clear plan.
+        </p>
+      </div>
+    </section>
 
-  <input type="hidden" name="service" value="Car Wash">
+    <!-- INFO SECTION -->
+    <section class="yh-section yh-section-info">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">How Our Car Wash Works</h2>
+        <p class="yh-section-text">
+          Young Hustlers offers three tiers of car wash services. You choose the tier, tell us
+          when and where, and we’ll show up ready to work. Prices are discussed clearly and
+          fairly, and you’ll receive an invoice manually after we confirm your booking.
+        </p>
+        <ul class="yh-list">
+          <li><strong>Basic – Exterior:</strong> Simple exterior wash, windows, and quick shine.</li>
+          <li><strong>Plus – Powerwash Exterior & Trunk:</strong> Deeper exterior clean with powerwash and trunk area.</li>
+          <li><strong>Premium – Full Services Interior & Exterior:</strong> Full interior vacuum, wipe‑down, and exterior wash.</li>
+        </ul>
+        <p class="yh-section-text">
+          Use the form below to tell us about your car, your preferred time, and your location.
+          Once you submit, we’ll receive a text with your details and follow up with an invoice.
+        </p>
+      </div>
+    </section>
 
-  <label>Name</label>
-  <input type="text" name="name" required>
+    <!-- ORDER FORM SECTION -->
+    <section class="yh-section yh-section-form">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">Book a Car Wash</h2>
+        <p class="yh-section-text">
+          Please fill out all fields carefully. The more detail you give us about the state of
+          your car, the better we can estimate time and effort.
+        </p>
 
-  <label>Phone Number</label>
-  <input type="tel" name="phone" required>
+        <form id="order-form" class="yh-form">
+          <!-- Hidden service field -->
+          <input type="hidden" name="service" value="Car Wash">
 
-  <label>Email</label>
-  <input type="email" name="email" required>
+          <!-- DATE OF CARWASH (Include a time 10:30–5pm) -->
+          <div class="yh-form-group">
+            <label for="date">DATE OF CARWASH (Include a time 10:30–5pm)</label>
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="Example: July 12, 3:30 PM"
+              required
+            >
+          </div>
 
-  <label>Address</label>
-  <input type="text" name="address" required>
+          <!-- EMAIL -->
+          <div class="yh-form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            >
+          </div>
 
-  <label>Date</label>
-  <input type="date" name="date" required>
+          <!-- TIER -->
+          <div class="yh-form-group">
+            <label for="tier">Tier</label>
+            <select id="tier" name="tier" required>
+              <option value="">Select a tier</option>
+              <option value="Basic – Exterior">Basic – Exterior</option>
+              <option value="Plus – Powerwash Exterior and Trunk">Plus – Powerwash Exterior and trunk</option>
+              <option value="Premium – Full services interior exterior">Premium – Full services interior exterior</option>
+            </select>
+          </div>
 
-  <label>Time</label>
-  <input type="time" name="time" required>
+          <!-- DESCRIBE THE STATE OF YOUR CAR -->
+          <div class="yh-form-group">
+            <label for="notes">DESCRIBE THE STATE OF YOUR CAR</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Example: Lots of pollen on exterior, crumbs in back seats, trunk has some boxes."
+              required
+            ></textarea>
+          </div>
 
-  <label>Package</label>
-  <select name="tier" required>
-    <option value="Basic">Basic</option>
-    <option value="Plus">Plus</option>
-    <option value="Premium">Premium</option>
-  </select>
+          <!-- ADDRESS -->
+          <div class="yh-form-group">
+            <label for="address">ADDRESS</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Street, city, and any special parking instructions"
+              required
+            >
+          </div>
 
-  <p>Total: <span class="live-price">$0</span></p>
+          <!-- NAME -->
+          <div class="yh-form-group">
+            <label for="name">NAME</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full name"
+              required
+            >
+          </div>
 
-  <button type="submit" class="btn primary">Submit Order</button>
+          <!-- PHONE (for SMS) -->
+          <div class="yh-form-group">
+            <label for="phone">Phone Number (for confirmation text)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Example: 302‑555‑1234"
+              required
+            >
+          </div>
 
-</form>
+          <!-- SUBMIT -->
+          <div class="yh-form-actions">
+            <button type="submit" class="yh-btn">Submit Car Wash Request</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
-<section class="operation-info fade-in">
-    <h2>Operation Hours</h2>
-    <p>We’re available for <strong>Car Washing</strong> and <strong>Lawn Mowing</strong> from <strong>12 PM – 7 PM</strong>.</p>
+    <!-- SUMMARY SECTION -->
+    <section class="yh-section yh-section-summary">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">Your Car Wash Summary</h2>
+        <p class="yh-section-text">
+          After you submit the form, your request will appear here with a summary of your
+          details. We’ll receive a text message with the same information and follow up with
+          an invoice and confirmation.
+        </p>
+        <div id="order-summary" class="yh-summary-box">
+          <p>No car wash request submitted yet.</p>
+        </div>
+      </div>
+    </section>
 
-    <h3>Service Duration</h3>
-    <ul class="duration-list">
-        <li><strong>Premium:</strong> 2 hours</li>
-        <li><strong>Plus:</strong> 1 hour – 1 hour 30 minutes</li>
-        <li><strong>Basic:</strong> Less than 1 hour</li>
-    </ul>
-</section>
+  </main>
 
-    <h2 style="margin-top: 40px;">Choose Payment Method</h2>
-
-    <div class="payment-grid">
-        <a href="payments/paypal.html" class="payment-card">
-            <h3>PayPal</h3>
-            <p class="placeholder">paypal.me/younghustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/venmo.html" class="payment-card">
-            <h3>Venmo</h3>
-            <p class="placeholder">@YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/zelle.html" class="payment-card">
-            <h3>Zelle</h3>
-            <p class="placeholder">younghustlers@email.com</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/cashapp.html" class="payment-card">
-            <h3>Cash App</h3>
-            <p class="placeholder">$YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/card.html" class="payment-card">
-            <h3>Credit/Debit Card</h3>
-            <p class="placeholder">Secure checkout</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
+  <!-- FOOTER -->
+  <footer class="yh-footer">
+    <div class="yh-footer-inner">
+      <p>Young Hustlers – Car Wash Service</p>
+      <p>All prices are discussed clearly before work begins.</p>
     </div>
-</section>
+  </footer>
 
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>

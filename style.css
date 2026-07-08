@@ -1,352 +1,692 @@
-/* --------------------------------------------------
-   GLOBAL RESET
--------------------------------------------------- */
+/* ==================================================
+   GLOBAL RESET & BASE
+================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-    background: #000;
-    color: #fff;
-    text-align: center;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/* --------------------------------------------------
-   HEADER
--------------------------------------------------- */
-.premium-header {
-    width: 100%;
-    padding: 20px 0;
-    background: #111;
-    border-bottom: 2px solid gold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* ==================================================
+   COLOR PALETTE & UTILITIES
+================================================== */
+:root {
+  --yh-bg-main: #000000;
+  --yh-bg-panel: #111111;
+  --yh-bg-panel-alt: #151515;
+  --yh-bg-panel-soft: #1a1a1a;
+  --yh-border-gold: #ffd700;
+  --yh-gold: #ffd700;
+  --yh-gold-soft: #e6c200;
+  --yh-text-main: #ffffff;
+  --yh-text-muted: #dddddd;
+  --yh-text-soft: #bbbbbb;
+  --yh-accent-blue: #1e90ff;
+  --yh-accent-green: #32cd32;
+  --yh-accent-red: #ff4c4c;
 }
 
-.logo-img {
-    width: 50px;
-    height: 50px;
+/* Utility classes */
+.yh-text-muted {
+  color: var(--yh-text-muted);
 }
 
-.brand-name {
-    font-size: 26px;
-    font-weight: 700;
-    color: gold;
+.yh-text-soft {
+  color: var(--yh-text-soft);
 }
 
-.nav-links a {
-    margin: 0 12px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
+.yh-gold {
+  color: var(--yh-gold);
 }
 
-.nav-links a:hover,
-.nav-links .active {
-    color: gold;
+.yh-bg-panel {
+  background: var(--yh-bg-panel);
 }
 
-/* --------------------------------------------------
-   HERO SECTION
--------------------------------------------------- */
-.hero {
-    position: relative;
-    min-height: 500px;
-    padding: 120px 20px;
-    background-image: url('assets/images/icons/background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+.yh-border-gold {
+  border: 2px solid var(--yh-border-gold);
+}
+
+/* ==================================================
+   LAYOUT WRAPPERS
+================================================== */
+.yh-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.yh-main {
+  flex: 1;
+}
+
+/* Generic section styling */
+.yh-section {
+  padding: 60px 20px;
+}
+
+.yh-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Section variants */
+.yh-section-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #222 0%, #000 60%);
+}
+
+.yh-section-info {
+  background: var(--yh-bg-panel);
+  border-top: 2px solid var(--yh-border-gold);
+  border-bottom: 2px solid var(--yh-border-gold);
+}
+
+.yh-section-form {
+  background: var(--yh-bg-panel-alt);
+}
+
+.yh-section-summary {
+  background: var(--yh-bg-panel-soft);
+}
+
+/* ==================================================
+   HEADER (YOUNG HUSTLERS)
+================================================== */
+.yh-header {
+  width: 100%;
+  background: #111;
+  border-bottom: 2px solid var(--yh-border-gold);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.yh-header-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yh-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.yh-logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--yh-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Nav */
+.yh-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.yh-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.yh-nav a:hover {
+  color: var(--yh-gold);
+  background: #222;
+  transform: translateY(-1px);
+}
+
+.yh-nav a.active {
+  color: var(--yh-gold);
+  border-bottom: 2px solid var(--yh-border-gold);
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .yh-header-inner {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .yh-nav {
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    z-index: 1;
+  }
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
-    z-index: 0;
+/* ==================================================
+   HERO CONTENT
+================================================== */
+.yh-hero-content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.hero h1,
-.hero p,
-.hero .hero-buttons {
-    position: relative;
-    z-index: 2;
+.yh-hero-title {
+  font-size: 40px;
+  color: var(--yh-gold);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-
-.tagline {
-    font-size: 20px;
-    margin-top: 10px;
-    opacity: 0.9;
-}
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
-    z-index: 0;
+.yh-hero-subtitle {
+  font-size: 16px;
+  color: var(--yh-text-muted);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
+/* Hero background overlay */
+.yh-section-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08), transparent 60%);
+  z-index: 1;
+}
 
+/* ==================================================
+   SECTION TITLES & TEXT
+================================================== */
+.yh-section-title {
+  font-size: 30px;
+  color: var(--yh-gold);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-/* --------------------------------------------------
+.yh-section-text {
+  font-size: 15px;
+  color: var(--yh-text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Lists */
+.yh-list {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.yh-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: var(--yh-text-soft);
+}
+
+/* Inline note */
+.yh-inline-note {
+  font-size: 14px;
+  color: var(--yh-text-soft);
+  margin-top: 6px;
+}
+
+/* ==================================================
+   FORMS
+================================================== */
+.yh-form {
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  background: var(--yh-bg-panel);
+  border-radius: 12px;
+  border: 2px solid var(--yh-border-gold);
+  padding: 28px 24px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.yh-form-group {
+  margin-bottom: 18px;
+}
+
+.yh-form-group label {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--yh-gold);
+  margin-bottom: 6px;
+}
+
+.yh-form-group input,
+.yh-form-group select,
+.yh-form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--yh-border-gold);
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.yh-form-group input::placeholder,
+.yh-form-group textarea::placeholder {
+  color: #777;
+}
+
+.yh-form-group input:focus,
+.yh-form-group select:focus,
+.yh-form-group textarea:focus {
+  border-color: var(--yh-gold-soft);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  background: #050505;
+}
+
+.yh-form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Form actions */
+.yh-form-actions {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ==================================================
    BUTTONS
--------------------------------------------------- */
+================================================== */
+.yh-btn {
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.yh-btn-primary {
+  background: var(--yh-gold);
+  color: #000;
+}
+
+.yh-btn-primary:hover {
+  background: var(--yh-gold-soft);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.yh-btn-secondary {
+  background: #222;
+  color: var(--yh-gold);
+  border: 1px solid var(--yh-border-gold);
+}
+
+.yh-btn-secondary:hover {
+  background: var(--yh-gold);
+  color: #000;
+}
+
+/* Generic .btn for compatibility */
 .btn {
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
 }
 
 .primary {
-    background: gold;
-    color: #000;
-    font-weight: 700;
+  background: var(--yh-gold);
+  color: #000;
+  font-weight: 700;
 }
 
 .primary:hover {
-    background: #e6c200;
+  background: var(--yh-gold-soft);
 }
 
 .secondary {
-    background: #222;
-    color: gold;
-    border: 1px solid gold;
+  background: #222;
+  color: var(--yh-gold);
+  border: 1px solid var(--yh-border-gold);
 }
 
 .secondary:hover {
-    background: gold;
-    color: #000;
+  background: var(--yh-gold);
+  color: #000;
 }
 
-.pay-btn {
-    margin-top: 10px;
-    background: gold;
-    color: #000;
-    font-weight: 700;
-    width: 100%;
+/* ==================================================
+   SUMMARY BOX
+================================================== */
+.yh-summary-box {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--yh-border-gold);
+  background: #111;
+  min-height: 120px;
+  font-size: 14px;
+  color: var(--yh-text-soft);
+  line-height: 1.6;
 }
 
-/* --------------------------------------------------
-   CONTENT SECTIONS
--------------------------------------------------- */
-.content {
-    padding: 60px 20px;
-}
-
-.content h2 {
-    font-size: 36px;
-    color: gold;
-    margin-bottom: 20px;
-}
-
-/* --------------------------------------------------
-   SERVICE GRID
--------------------------------------------------- */
-/* Service Grid Layout */
+/* ==================================================
+   SERVICE GRID (HOME / BUNDLES)
+================================================== */
 .service-grid {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-/* Service Card Styling */
 .service-card {
-    background: #111;
-    border: 2px solid gold;
-    border-radius: 12px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    transition: transform 0.3s ease;
+  background: #111;
+  border: 2px solid var(--yh-border-gold);
+  border-radius: 12px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
 }
 
-/* Service Images */
 .service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* keeps proportions clean */
-    border-radius: 8px;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-/* Text and Buttons */
 .service-card h3 {
-    font-size: 20px;
-    color: gold;
-    margin-bottom: 8px;
+  font-size: 20px;
+  color: var(--yh-gold);
+  margin-bottom: 8px;
 }
 
 .service-card p {
-    font-size: 15px;
-    color: #ddd;
-    margin-bottom: 15px;
+  font-size: 15px;
+  color: var(--yh-text-muted);
+  margin-bottom: 15px;
 }
 
 .service-card .btn {
-    align-self: center;
-    margin-top: auto;
+  align-self: center;
+  margin-top: auto;
 }
 
-/* --------------------------------------------------
-   ORDER FORM
--------------------------------------------------- */
-.order-form {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    background: #111;
-    padding: 30px;
-    border-radius: 12px;
-    border: 2px solid gold;
-    margin-top: 20px;
-}
-
-.order-form label {
-    display: block;
-    text-align: left;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.order-form input,
-.order-form select,
-.order-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 8px;
-    border: 1px solid gold;
-    background: #000;
-    color: #fff;
-}
-
-textarea {
-    height: 120px;
-}
-
-/* --------------------------------------------------
-   PAYMENT GRID
--------------------------------------------------- */
+/* ==================================================
+   PAYMENT GRID (IF USED)
+================================================== */
 .payment-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .payment-card {
-    background: #111;
-    border: 2px solid gold;
-    padding: 25px;
-    width: 260px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #fff;
-    transition: 0.3s;
+  background: #111;
+  border: 2px solid var(--yh-border-gold);
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .payment-card:hover {
-    transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
 }
 
 .payment-icon {
-    width: 120px;
-    margin: 20px auto;
-    display: block;
+  width: 120px;
+  margin: 20px auto;
+  display: block;
 }
 
-/* --------------------------------------------------
-   REVIEW CARDS
--------------------------------------------------- */
+/* ==================================================
+   REVIEW GRID
+================================================== */
 .review-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .review-card {
-    background: #111;
-    border: 2px solid gold;
-    padding: 25px;
-    width: 300px;
-    border-radius: 12px;
-    font-size: 18px;
+  background: #111;
+  border: 2px solid var(--yh-border-gold);
+  padding: 25px;
+  width: 300px;
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--yh-text-soft);
 }
 
-/* --------------------------------------------------
+/* ==================================================
    FOOTER
--------------------------------------------------- */
+================================================== */
+.yh-footer {
+  margin-top: 40px;
+  padding: 28px 20px;
+  background: #111;
+  border-top: 2px solid var(--yh-border-gold);
+}
+
+.yh-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.yh-footer-inner p {
+  font-size: 14px;
+  color: var(--yh-text-soft);
+  margin-bottom: 4px;
+}
+
+/* Old footer compatibility */
 .premium-footer {
-    margin-top: 60px;
-    padding: 40px 20px;
-    background: #111;
-    border-top: 2px solid gold;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #111;
+  border-top: 2px solid var(--yh-border-gold);
 }
 
 .footer-logo {
-    width: 60px;
-    margin-bottom: 10px;
+  width: 60px;
+  margin-bottom: 10px;
 }
 
 .footer-brand {
-    font-size: 24px;
-    font-weight: 700;
-    color: gold;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--yh-gold);
 }
 
 .footer-tagline {
-    opacity: 0.8;
-    margin-top: 5px;
+  opacity: 0.8;
+  margin-top: 5px;
 }
 
 .footer-copy {
-    margin-top: 10px;
-    opacity: 0.6;
+  margin-top: 10px;
+  opacity: 0.6;
 }
 
-/* --------------------------------------------------
+/* ==================================================
    ANIMATIONS
--------------------------------------------------- */
+================================================== */
+/* Fade in */
 .fade-in {
-    animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered fade */
+.yh-stagger {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: staggerFade 0.9s ease forwards;
+}
+
+.yh-stagger:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.yh-stagger:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.yh-stagger:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.yh-stagger:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+@keyframes staggerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow pulse */
+.yh-glow {
+  animation: glowPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0.0);
+  }
+}
+
+/* Button ripple */
+.yh-btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.yh-btn-ripple::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==================================================
+   RESPONSIVE TWEAKS
+================================================== */
+@media (max-width: 768px) {
+  .yh-section {
+    padding: 40px 16px;
+  }
+
+  .yh-section-title {
+    font-size: 24px;
+  }
+
+  .yh-hero-title {
+    font-size: 30px;
+  }
+
+  .service-card {
+    width: 90%;
+  }
+
+  .yh-form {
+    width: 95%;
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yh-hero-title {
+    font-size: 26px;
+  }
+
+  .yh-logo-text {
+    font-size: 22px;
+  }
+
+  .yh-nav a {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
 }

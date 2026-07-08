@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Reviews – Young Hustlers</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Reviews – Young Hustlers</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="yh-page">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+  <header class="yh-header fade-in">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
         <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+
+      <nav class="yh-nav">
         <a href="index.html">Home</a>
         <a href="lemonade.html">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html">Bundles</a>
         <a href="reviews.html" class="active">Reviews</a>
         <a href="referral.html">Referral</a>
-    </nav>
-</header>
-
-<section class="hero fade-in" style="background-image: url('assets/images/icons/background.png'); background-size: cover; background-position: center;">
-    <h1>Customer Reviews</h1>
-    <p class="tagline">Real Feedback From Real Neighbors.</p>
-</section>
-
-<section class="content fade-in">
-    <h2>What People Are Saying</h2>
-
-    <div class="review-grid">
-
-        <div class="review-card">
-            <h3>★★★★★</h3>
-            <p>"Best lemonade in the neighborhood. Fast delivery and super friendly!"</p>
-            <span>- Sarah M.</span>
-        </div>
-
-        <div class="review-card">
-            <h3>★★★★★</h3>
-            <p>"My car looked brand new after the wash. These kids work HARD."</p>
-            <span>- Jason R.</span>
-        </div>
-
-        <div class="review-card">
-            <h3>★★★★★</h3>
-            <p>"Lawn mowing was clean and quick. Definitely booking again."</p>
-            <span>- Emily T.</span>
-        </div>
-
-        <div class="review-card">
-            <h3>★★★★★</h3>
-            <p>"The bundle deal saved me money and everything was done perfectly."</p>
-            <span>- Mark D.</span>
-        </div>
-
-        <div class="review-card">
-            <h3>★★★★★</h3>
-            <p>"Young Hustlers is the future. Respect the grind."</p>
-            <span>- Anthony W.</span>
-        </div>
-
+      </nav>
     </div>
+  </header>
 
-    <h2 style="margin-top: 40px;">Want to Leave a Review?</h2>
-    <p>Send us your feedback and we’ll feature it here!</p>
+  <!-- ==================================================
+       HERO SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-hero fade-in" style="
+    background-image: url('assets/images/icons/background.png');
+    background-size: cover;
+    background-position: center;
+  ">
+    <div class="yh-hero-content">
+      <h1 class="yh-hero-title">Customer Reviews</h1>
+      <p class="yh-hero-subtitle">Real Feedback From Real Neighbors.</p>
+    </div>
+  </section>
 
-    <a href="referral.html" class="btn primary">Submit a Review</a>
+  <!-- ==================================================
+       REVIEWS SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">What People Are Saying</h2>
+      <p class="yh-section-text">
+        Young Hustlers is proud to serve our community.  
+        Here’s what your neighbors are saying about our lemonade, car washes, lawn care, and bundles.
+      </p>
 
-</section>
+      <div class="review-grid">
 
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
+        <!-- Review 1 -->
+        <div class="review-card yh-stagger">
+          <h3 class="yh-gold">★★★★★</h3>
+          <p>"Best lemonade in the neighborhood. Fast delivery and super friendly!"</p>
+          <span class="yh-text-soft">– Sarah M.</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card yh-stagger">
+          <h3 class="yh-gold">★★★★★</h3>
+          <p>"My car looked brand new after the wash. These kids work HARD."</p>
+          <span class="yh-text-soft">– Jason R.</span>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card yh-stagger">
+          <h3 class="yh-gold">★★★★★</h3>
+          <p>"Lawn mowing was clean and quick. Definitely booking again."</p>
+          <span class="yh-text-soft">– Emily T.</span>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card yh-stagger">
+          <h3 class="yh-gold">★★★★★</h3>
+          <p>"The bundle deal saved me money and everything was done perfectly."</p>
+          <span class="yh-text-soft">– Mark D.</span>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card yh-stagger">
+          <h3 class="yh-gold">★★★★★</h3>
+          <p>"Young Hustlers is the future. Respect the grind."</p>
+          <span class="yh-text-soft">– Anthony W.</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       LEAVE A REVIEW
+  ================================================== -->
+  <section class="yh-section yh-section-form fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Want to Leave a Review?</h2>
+      <p class="yh-section-text">
+        We love hearing from our customers.  
+        Submit your feedback and we’ll feature it here on our website.
+      </p>
+
+      <a href="referral.html" class="yh-btn-primary yh-btn">Submit a Review</a>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+  <footer class="yh-footer fade-in">
+    <div class="yh-footer-inner">
+      <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Young Hustlers Logo">
+      <p class="footer-brand">Young Hustlers</p>
+      <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+      <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

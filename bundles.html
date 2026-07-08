@@ -1,130 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bundles – Young Hustlers</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Bundles – Young Hustlers</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="yh-page">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+  <header class="yh-header fade-in">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
         <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+
+      <nav class="yh-nav">
         <a href="index.html">Home</a>
         <a href="lemonade.html">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html" class="active">Bundles</a>
         <a href="reviews.html">Reviews</a>
         <a href="referral.html">Referral</a>
-    </nav>
-</header>
-
-<section class="hero fade-in" style="background-image: url('assets/images/icons/background.png'); background-size: cover; background-position: center;">
-    <h1>Bundles</h1>
-    <p class="tagline">If It Needs Doing, We’re Doing It.</p>
-</section>
-
-<section class="content fade-in">
-    <h2>Save More With Bundles</h2>
-    <p>Combine services and get the best value delivered right to your home.</p>
-
-    <div class="service-grid" style="margin-top: 20px;">
-        <div class="service-card">
-            <h3>Lemonade + Car Wash</h3>
-            <p>$12 – Large lemonade + exterior wash</p>
-        </div>
-        <div class="service-card">
-            <h3>Car Wash + Lawn Mowing</h3>
-            <p>$22 – Full wash + medium yard mow</p>
-        </div>
-        <div class="service-card">
-            <h3>Full Hustler Bundle</h3>
-            <p>$30 – Lemonade + full wash + lawn mow</p>
-        </div>
+      </nav>
     </div>
+  </header>
 
-    <h2 style="margin-top: 40px;">Order a Delivery Bundle</h2>
-
-    <form data-order-form>
-
-  <input type="hidden" name="service" value="Car Wash">
-
-  <label>Name</label>
-  <input type="text" name="name" required>
-
-  <label>Phone Number</label>
-  <input type="tel" name="phone" required>
-
-  <label>Email</label>
-  <input type="email" name="email" required>
-
-  <label>Address</label>
-  <input type="text" name="address" required>
-
-  <label>Date</label>
-  <input type="date" name="date" required>
-
-  <label>Time</label>
-  <input type="time" name="time" required>
-
-  <label>Package</label>
-  <select name="tier" required>
-    <option value="Lemonade + Car Wash">Basic</option>
-    <option value="Car Wash + Lawn Mowing">Plus</option>
-    <option value="Full Hustler Bundle">Premium</option>
-  </select>
-
-  <p>Total: <span class="live-price">$0</span></p>
-
-  <button type="submit" class="btn primary">Submit Order</button>
-
-</form>
-
-    <h2 style="margin-top: 40px;">Choose Payment Method</h2>
-
-    <div class="payment-grid">
-        <a href="payments/paypal.html" class="payment-card">
-            <h3>PayPal</h3>
-            <p class="placeholder">paypal.me/younghustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/venmo.html" class="payment-card">
-            <h3>Venmo</h3>
-            <p class="placeholder">@YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/zelle.html" class="payment-card">
-            <h3>Zelle</h3>
-            <p class="placeholder">younghustlers@email.com</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/cashapp.html" class="payment-card">
-            <h3>Cash App</h3>
-            <p class="placeholder">$YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-
-        <a href="payments/card.html" class="payment-card">
-            <h3>Credit/Debit Card</h3>
-            <p class="placeholder">Secure checkout</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
+  <!-- ==================================================
+       HERO SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-hero fade-in" style="
+    background-image: url('assets/images/icons/background.png');
+    background-size: cover;
+    background-position: center;
+  ">
+    <div class="yh-hero-content">
+      <h1 class="yh-hero-title">Bundles</h1>
+      <p class="yh-hero-subtitle">If It Needs Doing, We’re Doing It.</p>
     </div>
-</section>
+  </section>
 
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
+  <!-- ==================================================
+       BUNDLE OPTIONS
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Save More With Bundles</h2>
+      <p class="yh-section-text">
+        Combine services and get the best value delivered right to your home.  
+        Bundles are perfect for busy weekends, events, or seasonal cleanups.
+      </p>
 
+      <div class="service-grid">
+
+        <!-- Bundle 1 -->
+        <div class="service-card yh-stagger">
+          <h3>Lemonade + Car Wash</h3>
+          <p class="yh-text-soft">Large lemonade + exterior wash</p>
+        </div>
+
+        <!-- Bundle 2 -->
+        <div class="service-card yh-stagger">
+          <h3>Car Wash + Lawn Care</h3>
+          <p class="yh-text-soft">Full wash + medium yard mow</p>
+        </div>
+
+        <!-- Bundle 3 -->
+        <div class="service-card yh-stagger">
+          <h3>Full Hustler Bundle</h3>
+          <p class="yh-text-soft">Lemonade + full wash + lawn care</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       ORDER FORM
+  ================================================== -->
+  <section class="yh-section yh-section-form fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Order a Bundle</h2>
+      <p class="yh-section-text">
+        Fill out the form below to order a bundle.  
+        Once submitted, we’ll receive a text message with your details and follow up with a Square invoice.
+      </p>
+
+      <form id="order-form" class="yh-form">
+
+        <!-- Hidden service -->
+        <input type="hidden" name="service" value="Bundle">
+
+        <!-- NAME -->
+        <div class="yh-form-group">
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+        </div>
+
+        <!-- PHONE -->
+        <div class="yh-form-group">
+          <label for="phone">Phone Number (for confirmation text)</label>
+          <input type="tel" id="phone" name="phone" placeholder="Example: 302‑555‑1234" required>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="yh-form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="yh-form-group">
+          <label for="address">ADDRESS</label>
+          <input type="text" id="address" name="address" placeholder="Street, city, and any special instructions" required>
+        </div>
+
+        <!-- DATE -->
+        <div class="yh-form-group">
+          <label for="date">DATE (Include a time 10:30–5pm)</label>
+          <input type="text" id="date" name="date" placeholder="Example: July 18, 1:30 PM" required>
+        </div>
+
+        <!-- TIME -->
+        <div class="yh-form-group">
+          <label for="time">TIME</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+
+        <!-- PACKAGE -->
+        <div class="yh-form-group">
+          <label for="tier">Bundle Package</label>
+          <select id="tier" name="tier" required>
+            <option value="">Select a bundle</option>
+            <option value="Lemonade + Car Wash">Lemonade + Car Wash</option>
+            <option value="Car Wash + Lawn Care">Car Wash + Lawn Care</option>
+            <option value="Full Hustler Bundle">Full Hustler Bundle</option>
+          </select>
+        </div>
+
+        <!-- NOTES -->
+        <div class="yh-form-group">
+          <label for="notes">Notes (Optional)</label>
+          <textarea id="notes" name="notes" placeholder="Any special instructions?"></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="yh-form-actions">
+          <button type="submit" class="yh-btn-primary yh-btn">Submit Bundle Request</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SUMMARY SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-summary fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Your Bundle Summary</h2>
+      <p class="yh-section-text">
+        After you submit the form, your bundle request will appear here with a summary of your details.
+        We’ll receive a text message with the same information and follow up with an invoice.
+      </p>
+
+      <div id="order-summary" class="yh-summary-box">
+        <p>No bundle request submitted yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+  <footer class="yh-footer fade-in">
+    <div class="yh-footer-inner">
+      <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Young Hustlers Logo">
+      <p class="footer-brand">Young Hustlers</p>
+      <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+      <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

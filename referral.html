@@ -1,87 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Referral – Young Hustlers</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Referral – Young Hustlers</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="yh-page">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+  <header class="yh-header fade-in">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
         <img src="assets/images/icons/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+
+      <nav class="yh-nav">
         <a href="index.html">Home</a>
         <a href="lemonade.html">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html">Bundles</a>
         <a href="reviews.html">Reviews</a>
         <a href="referral.html" class="active">Referral</a>
-    </nav>
-</header>
-
-<section class="hero fade-in" style="background-image: url('assets/images/icons/background.png'); background-size: cover; background-position: center;">
-    <h1>Referral Program</h1>
-    <p class="tagline">Share the Hustle. Earn Rewards.</p>
-</section>
-
-<section class="content fade-in">
-    <h2>Refer a Friend</h2>
-    <p>Send us a referral and get rewarded when they place their first order.</p>
-
-    <form class="order-form" action="https://script.google.com/macros/s/YOUR_REFERRAL_SCRIPT/exec" method="POST">
-
-        <label>Your Name:
-            <input type="text" name="your_name" required>
-        </label>
-
-        <label>Your Email:
-            <input type="email" name="your_email" required>
-        </label>
-
-        <label>Friend's Name:
-            <input type="text" name="friend_name" required>
-        </label>
-
-        <label>Friend's Email:
-            <input type="email" name="friend_email" required>
-        </label>
-
-        <label>Message (Optional):
-            <textarea name="message" placeholder="Write a short message to your friend..."></textarea>
-        </label>
-
-        <button type="submit" class="btn primary">Submit Referral</button>
-    </form>
-
-    <h2 style="margin-top: 40px;">How It Works</h2>
-
-    <div class="why-grid">
-        <div class="why-card">
-            <h3>1. Refer a Friend</h3>
-            <p>Fill out the form above with your friend's info.</p>
-        </div>
-        <div class="why-card">
-            <h3>2. They Place an Order</h3>
-            <p>Once they order any service, your referral is counted.</p>
-        </div>
-        <div class="why-card">
-            <h3>3. You Get Rewards</h3>
-            <p>Earn discounts, free lemonade, or priority service.</p>
-        </div>
+      </nav>
     </div>
+  </header>
 
-</section>
+  <!-- ==================================================
+       HERO SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-hero fade-in" style="
+    background-image: url('assets/images/icons/background.png');
+    background-size: cover;
+    background-position: center;
+  ">
+    <div class="yh-hero-content">
+      <h1 class="yh-hero-title">Referral Program</h1>
+      <p class="yh-hero-subtitle">Share the Hustle. Earn Rewards.</p>
+    </div>
+  </section>
 
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
+  <!-- ==================================================
+       REFERRAL INTRO
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Refer a Friend</h2>
+      <p class="yh-section-text">
+        When you refer someone to Young Hustlers and they place their first order,
+        you earn rewards — free lemonade, discounts, or priority service.
+      </p>
+      <p class="yh-section-text">
+        Fill out the form below with your info and your friend's info.  
+        We’ll receive a text message with your referral and follow up manually.
+      </p>
+    </div>
+  </section>
 
+  <!-- ==================================================
+       REFERRAL FORM
+  ================================================== -->
+  <section class="yh-section yh-section-form fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Submit a Referral</h2>
+      <p class="yh-section-text">
+        Please fill out all fields carefully.  
+        Your friend will receive a message letting them know you referred them.
+      </p>
+
+      <form id="order-form" class="yh-form">
+
+        <!-- Hidden service -->
+        <input type="hidden" name="service" value="Referral">
+
+        <!-- YOUR NAME -->
+        <div class="yh-form-group">
+          <label for="your_name">Your Name</label>
+          <input type="text" id="your_name" name="your_name" placeholder="Your full name" required>
+        </div>
+
+        <!-- YOUR EMAIL -->
+        <div class="yh-form-group">
+          <label for="your_email">Your Email</label>
+          <input type="email" id="your_email" name="your_email" placeholder="you@example.com" required>
+        </div>
+
+        <!-- FRIEND NAME -->
+        <div class="yh-form-group">
+          <label for="friend_name">Friend's Name</label>
+          <input type="text" id="friend_name" name="friend_name" placeholder="Friend's full name" required>
+        </div>
+
+        <!-- FRIEND EMAIL -->
+        <div class="yh-form-group">
+          <label for="friend_email">Friend's Email</label>
+          <input type="email" id="friend_email" name="friend_email" placeholder="friend@example.com" required>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="yh-form-group">
+          <label for="message">Message (Optional)</label>
+          <textarea id="message" name="message" placeholder="Write a short message to your friend..."></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="yh-form-actions">
+          <button type="submit" class="yh-btn-primary yh-btn">Submit Referral</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SUMMARY SECTION
+  ================================================== -->
+  <section class="yh-section yh-section-summary fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">Referral Summary</h2>
+      <p class="yh-section-text">
+        After you submit the form, your referral details will appear here.
+        We’ll receive a text message with the same information and follow up.
+      </p>
+
+      <div id="order-summary" class="yh-summary-box">
+        <p>No referral submitted yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       HOW IT WORKS
+  ================================================== -->
+  <section class="yh-section yh-section-info fade-in">
+    <div class="yh-section-inner">
+      <h2 class="yh-section-title">How It Works</h2>
+      <p class="yh-section-text">
+        Our referral program is simple, fair, and rewarding.
+      </p>
+
+      <div class="service-grid">
+
+        <!-- Step 1 -->
+        <div class="service-card yh-stagger">
+          <h3>1. Refer a Friend</h3>
+          <p class="yh-text-soft">Fill out the form with your friend's info.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="service-card yh-stagger">
+          <h3>2. They Place an Order</h3>
+          <p class="yh-text-soft">Once they order any service, your referral is counted.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="service-card yh-stagger">
+          <h3>3. You Get Rewards</h3>
+          <p class="yh-text-soft">Earn discounts, free lemonade, or priority service.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+  <footer class="yh-footer fade-in">
+    <div class="yh-footer-inner">
+      <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Young Hustlers Logo">
+      <p class="footer-brand">Young Hustlers</p>
+      <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
+      <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

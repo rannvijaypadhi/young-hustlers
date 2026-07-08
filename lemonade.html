@@ -1,123 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Lemonade – Young Hustlers</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Young Hustlers – Lemonade Stand</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="lemonade">
 
-<header class="premium-header fade-in">
-    <div class="logo-area">
-        <img src="assets/favicon.png" alt="Young Hustlers Logo" class="logo-img">
-        <span class="brand-name">Young Hustlers</span>
-    </div>
-    <nav class="nav-links">
+  <!-- HEADER -->
+  <header class="yh-header">
+    <div class="yh-header-inner">
+      <div class="yh-logo-wrap">
+        <span class="yh-logo-text">Young Hustlers</span>
+      </div>
+      <nav class="yh-nav">
         <a href="index.html">Home</a>
-        <a href="lemonade.html" class="active">Lemonade</a>
         <a href="carwash.html">Car Wash</a>
-        <a href="lawn.html">Lawn Mowing</a>
+        <a href="lemonade.html">Lemonade</a>
+        <a href="lawn.html">Lawn Care</a>
         <a href="bundles.html">Bundles</a>
-        <a href="reviews.html">Reviews</a>
         <a href="referral.html">Referral</a>
-    </nav>
-</header>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero fade-in" style="background-image: url('assets/images/background.png'); background-size: cover; background-position: center;">
-    <h1>Lemonade Stand</h1>
-    <p class="tagline">If It Needs Doing, We’re Doing It.</p>
-</section>
+  <!-- MAIN -->
+  <main class="yh-main">
 
-<section class="content fade-in">
-    <h2>Fresh, Cold, Made With Hustle</h2>
-    <p>Order lemonade for delivery right to your door.</p>
+    <!-- HERO SECTION -->
+    <section class="yh-section yh-section-hero">
+      <div class="yh-hero-content">
+        <h1 class="yh-hero-title">Lemonade by Young Hustlers</h1>
+        <p class="yh-hero-subtitle">
+          Order fresh lemonade for your event, hangout, or neighborhood stand. We keep it simple:
+          you tell us how much lemonade you need, whether you want extra ice, and where to bring it.
+        </p>
+      </div>
+    </section>
 
-    <div class="lemonade-showcase">
-        <img src="assets/images/lemonade.png" class="lemonade-img" alt="Lemonade">
-        <div class="lemonade-text">
-            <h3>Menu</h3>
-            <ul class="menu-list">
-                <li>Small Cup – $2</li>
-                <li>Large Cup – $3</li>
-                <li>Gallon – $8</li>
-            </ul>
+    <!-- INFO SECTION -->
+    <section class="yh-section yh-section-info">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">How Our Lemonade Service Works</h2>
+        <p class="yh-section-text">
+          Young Hustlers can prepare and deliver lemonade for small gatherings, parties, or casual
+          neighborhood setups. We focus on clear communication and flexible quantities, so you get
+          exactly what you need without overcomplicating things.
+        </p>
+        <p class="yh-section-text">
+          Instead of tiers, we ask directly:
+        </p>
+        <ul class="yh-list">
+          <li><strong>How much lemonade?</strong> Pitchers, gallons, or a rough estimate of cups.</li>
+          <li><strong>Extra ice?</strong> Let us know if you want extra ice included or kept separate.</li>
+        </ul>
+        <p class="yh-section-text">
+          Use the form below to tell us your lemonade quantity, event details, and delivery address.
+          We’ll receive a text with your order and follow up with an invoice.
+        </p>
+      </div>
+    </section>
+
+    <!-- ORDER FORM SECTION -->
+    <section class="yh-section yh-section-form">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">Order Lemonade</h2>
+        <p class="yh-section-text">
+          Fill out the form with as much detail as possible. This helps us plan ingredients, ice,
+          and timing for your event.
+        </p>
+
+        <form id="order-form" class="yh-form">
+          <!-- Hidden service field -->
+          <input type="hidden" name="service" value="Lemonade">
+
+          <!-- DATE OF LEMONADE (Include a time) -->
+          <div class="yh-form-group">
+            <label for="date">DATE OF LEMONADE (Include a time 10:30–5pm)</label>
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="Example: July 15, 2:00 PM"
+              required
+            >
+          </div>
+
+          <!-- EMAIL -->
+          <div class="yh-form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            >
+          </div>
+
+          <!-- HOW MUCH LEMONADE -->
+          <div class="yh-form-group">
+            <label for="amount">How much lemonade?</label>
+            <input
+              type="text"
+              id="amount"
+              name="amount"
+              placeholder="Example: 3 gallons, or enough for 20 people"
+              required
+            >
+          </div>
+
+          <!-- EXTRA ICE? -->
+          <div class="yh-form-group">
+            <label for="extraIce">Extra ice?</label>
+            <select id="extraIce" name="extraIce" required>
+              <option value="">Select an option</option>
+              <option value="Yes, extra ice">Yes, extra ice</option>
+              <option value="No extra ice">No extra ice</option>
+              <option value="Ice on the side">Ice on the side</option>
+            </select>
+          </div>
+
+          <!-- DESCRIBE THE EVENT -->
+          <div class="yh-form-group">
+            <label for="notes">Describe the event</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Example: Birthday party, small neighborhood gathering, school event, etc."
+              required
+            ></textarea>
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="yh-form-group">
+            <label for="address">ADDRESS</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Where should we bring the lemonade?"
+              required
+            >
+          </div>
+
+          <!-- NAME -->
+          <div class="yh-form-group">
+            <label for="name">NAME</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full name"
+              required
+            >
+          </div>
+
+          <!-- PHONE -->
+          <div class="yh-form-group">
+            <label for="phone">Phone Number (for confirmation text)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Example: 302‑555‑1234"
+              required
+            >
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="yh-form-actions">
+            <button type="submit" class="yh-btn">Submit Lemonade Request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SUMMARY SECTION -->
+    <section class="yh-section yh-section-summary">
+      <div class="yh-section-inner">
+        <h2 class="yh-section-title">Your Lemonade Summary</h2>
+        <p class="yh-section-text">
+          After you submit the form, your lemonade order will appear here with a summary of your
+          details. We’ll receive a text message with the same information and follow up with an
+          invoice and confirmation.
+        </p>
+        <div id="order-summary" class="yh-summary-box">
+          <p>No lemonade request submitted yet.</p>
         </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="yh-footer">
+    <div class="yh-footer-inner">
+      <p>Young Hustlers – Lemonade Service</p>
+      <p>Quantities and pricing are discussed clearly before we start.</p>
     </div>
+  </footer>
 
-    <h2>Place Your Delivery Order</h2>
-
-   <form data-order-form>
-
-  <input type="hidden" name="service" value="Car Wash">
-
-  <label>Name</label>
-  <input type="text" name="name" required>
-
-  <label>Phone Number</label>
-  <input type="tel" name="phone" required>
-
-  <label>Email</label>
-  <input type="email" name="email" required>
-
-  <label>Address</label>
-  <input type="text" name="address" required>
-
-  <label>Date</label>
-  <input type="date" name="date" required>
-
-  <label>Time</label>
-  <input type="time" name="time" required>
-
-  <label>Package</label>
-  <select name="tier" required>
-    <option value="Basic">Basic</option>
-    <option value="Plus">Plus</option>
-    <option value="Premium">Premium</option>
-  </select>
-
-  <p>Total: <span class="live-price">$0</span></p>
-
-  <button type="submit" class="btn primary">Submit Order</button>
-
-</form>
-
-    <h2 style="margin-top: 40px;">Choose Payment Method</h2>
-
-    <div class="payment-grid">
-        <a href="payments/paypal.html" class="payment-card">
-            <h3>PayPal</h3>
-            <p class="placeholder">paypal.me/younghustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-        <a href="payments/venmo.html" class="payment-card">
-            <h3>Venmo</h3>
-            <p class="placeholder">@YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-        <a href="payments/zelle.html" class="payment-card">
-            <h3>Zelle</h3>
-            <p class="placeholder">younghustlers@email.com</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-        <a href="payments/cashapp.html" class="payment-card">
-            <h3>Cash App</h3>
-            <p class="placeholder">$YoungHustlers</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-        <a href="payments/card.html" class="payment-card">
-            <h3>Credit/Debit Card</h3>
-            <p class="placeholder">Secure checkout</p>
-            <button class="btn pay-btn">Pay</button>
-        </a>
-    </div>
-</section>
-
-<footer class="main-footer premium-footer fade-in">
-    <img src="assets/images/icons/favicon.png" class="footer-logo" alt="Lemon Logo">
-    <p class="footer-brand">Young Hustlers</p>
-    <p class="footer-tagline">If It Needs Doing, We’re Doing It.</p>
-    <p class="footer-copy">© 2026 Young Hustlers. All rights reserved.</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
